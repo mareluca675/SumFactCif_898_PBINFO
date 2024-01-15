@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+long long sumfactcif(unsigned int n)
+{
+    long long sumfact = 0, fact = 1;
+    int uc;
+    
+    if(n == 0)
+    {
+        return 1;
+    }
+    
+    while(n > 0)
+    {
+        uc = n % 10;
+        fact = 1;
+        
+        while(uc != 0)
+        {
+            fact *= uc;
+            uc --;
+        }
+
+        sumfact += fact;
+        n = n / 10;
+    }
+    
+    return sumfact;
+}
